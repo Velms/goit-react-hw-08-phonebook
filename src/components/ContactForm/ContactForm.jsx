@@ -16,7 +16,7 @@ export const ContactForm = () => {
   const [addContact] = useAddContactMutation();
 
   const onAddContact = contact => {
-    if (contacts && contacts.some(item => item.name === contact.name)) {
+    if (contacts && contacts.some(item => item.name.toLowerCase === contact.name.toLowerCase)) {
       alert(`${contact.name} is already in contacts`);
       return;
     }
